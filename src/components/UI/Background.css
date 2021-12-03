@@ -1,0 +1,12 @@
+.background-fade-animation {
+    animation: background-fade 2s 1s ease forwards;
+}
+
+@keyframes background-fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

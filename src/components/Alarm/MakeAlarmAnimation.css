@@ -1,0 +1,15 @@
+.make-alarm-animation {
+    animation: slide-in-bottom 1s 0s 1 forwards ease-out;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(120%);
+    }
+    70% {
+        transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

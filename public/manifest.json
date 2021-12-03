@@ -1,0 +1,23 @@
+{
+  "name": "Spark Dashboard",
+  "description": "Powerful override for New Tab redefining it with new features and functionality",
+  "version": "1.1.2",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "tabs", "alarms", "notifications", "topSites"],
+  "icons": {
+    "16": "logo16.png",
+    "48": "logo48.png",
+    "128": "logo128.png",
+    "192": "logo192.png",
+    "512": "logo512.png"
+  },
+  "manifest_version": 3
+}

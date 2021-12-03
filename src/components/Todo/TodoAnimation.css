@@ -1,0 +1,13 @@
+.todo-animation {
+    animation: slide-in-bottom-todo 0.5s ease-out 0s 1 forwards;
+}
+
+@keyframes slide-in-bottom-todo {
+    0% {
+        transform: translateY(100%) scaleY(0);
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1);
+    }
+}
