@@ -7,20 +7,15 @@ interface Props {
 }
 
 const Checkbox = (props: Props) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(props.enabled)
   const checkbox = useRef<HTMLInputElement>(null)
 
   const id = Math.random().toString() + Math.random().toString();
 
-  useEffect(() => {
-    setChecked(props.enabled)
-  },[props])
-
   const toggleEnabled = () => {
-    // Passing it inversed since setChecked hasn't run yet
-    props.onClick(!checked)
     let checkedValue = checkbox.current!.checked
-    setChecked(!checkedValue)
+    props.onClick(checkedValue)
+    setChecked(checkedValue)
   }
 
   return (

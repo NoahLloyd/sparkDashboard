@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SettingsIcon from "../../assets/icons/SettingsIcon";
-import SettingsNagiation from "./SettingsNavigation/SettingsNavigation";
+import SettingsNavigation from "./SettingsNavigation/SettingsNavigation";
 import Setting from "./SettingsCategories/Setting";
 
 export default function Settings() {
@@ -12,7 +12,7 @@ export default function Settings() {
       <aside className="absolute bottom-0 left-0 m-4">
         {settingsOpen || <SettingsIcon onClick={() => setSettingsOpen(true)} />}
         {settingsOpen && (
-          <SettingsNagiation
+          <SettingsNavigation
             onBackdropClick={() => {
               setSettingsOpen(false);
             }}

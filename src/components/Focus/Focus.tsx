@@ -4,22 +4,22 @@ interface Props {}
 
 const Focus = (props: Props) => {
   const [styles, setStyles] = useState(" text-light");
-  const [showFocus, setShowFocus] = useState(false);
+  const [focusSetting, setfocusSetting] = useState(false);
 
   const toggleFocusMode = () => {
-    chrome.storage.sync.get(["focusSetting"], (storage) => {
-      setFocusMode(!storage.focusSetting);
+    chrome.storage.sync.get(["focusEnabled"], (storage) => {
+      setFocusMode(!storage.focusEnabled);
     });
   };
 
   const setFocusMode = (enabled: boolean) => {
-    chrome.storage.sync.set({ focusSetting: enabled });
+    chrome.storage.sync.set({ focusEnabled: enabled });
     setStyles(enabled ? " text-secondary" : " text-light");
   };
 
-  const focusSettingTrue = () => {
-    chrome.storage.sync.get(["focusSetting"], (storage) => {
-      if (storage.focusSetting) {
+  const focusEnabledTrue = () => {
+    chrome.storage.sync.get(["focusEnabled"], (storage) => {
+      if (storage.focusEnabled) {
         setFocusMode(true);
       }
     });
@@ -27,11 +27,11 @@ const Focus = (props: Props) => {
 
   useEffect(() => {
     // Inputs the focus text
-    chrome.storage.sync.get(["showFocus"], (storage) => {
-      if (storage.showFocus === undefined) {
-        setShowFocus(true);
+    chrome.storage.sync.get(["focusSetting"], (storage) => {
+      if (storage.focusSetting === undefined) {
+        setfocusSetting(true);
       } else {
-        setShowFocus(storage.showFocus);
+        setfocusSetting(storage.focusSetting);
       }
     });
     // Checks if the auto toggle is on, and if it's in the time period
@@ -44,19 +44,19 @@ const Focus = (props: Props) => {
             if (now >= autoFocusTimes[0] && now < autoFocusTimes[1]) {
               setFocusMode(true);
             } else {
-              focusSettingTrue();
+              focusEnabledTrue();
             }
           } else {
-            focusSettingTrue();
+            focusEnabledTrue();
           }
         });
       } else {
-        focusSettingTrue();
+        focusEnabledTrue();
       }
     });
   }, []);
 
-  if (showFocus) {
+  if (focusSetting) {
     return (
       <h1
         className={

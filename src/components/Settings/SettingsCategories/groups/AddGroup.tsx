@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import PlusIcon from "../../../../assets/icons/PlusIcon";
 
-interface Props {}
+interface Props {
+  updateGroup: () => void;
+}
 
 const AddGroup = (props: Props) => {
   const [addedSites, setAddedSites] = useState<string[]>([]);
@@ -44,6 +46,10 @@ const AddGroup = (props: Props) => {
       }
       const groupsWithNew = [...tabGroups, newGroup];
       chrome.storage.sync.set({ tabGroups: groupsWithNew });
+
+      setTimeout(() => {
+        props.updateGroup()
+      },200)
     });
 
     setAddedSites([]);

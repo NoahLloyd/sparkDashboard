@@ -6,12 +6,17 @@ import ShowGroups from "./ShowGroups";
 interface Props {}
 
 const GroupsSetting = (props: Props) => {
+  const [state, setState] = useState(true)
   const [groupsEnabled, setGroupsEnabled] = useState(true);
   useEffect(() => {
     chrome.storage.sync.get(["groupsSetting"], (storage) => {
       setGroupsEnabled(storage.groupsSetting);
     });
   }, []);
+
+  const updateGroup = () => {
+    setState((state) => !state) 
+  }
 
   return (
     <div className="text-center w-3/4 mx-auto mt-4">
@@ -26,7 +31,7 @@ const GroupsSetting = (props: Props) => {
         Group your tabs to quickly access different environments
       </h2>
       <div className="flex w-full justify-between">
-        <AddGroup />
+        <AddGroup updateGroup={updateGroup} />
         <ShowGroups />
       </div>
     </div>

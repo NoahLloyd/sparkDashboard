@@ -6,19 +6,19 @@ import BlockSites from "./BlockSites";
 interface Props {}
 
 const FocusSetting = (props: Props) => {
-  const [showFocusEnabled, setShowFocusEnabled] = useState(true);
+  const [focusSettingEnabled, setfocusSettingEnabled] = useState(true);
 
-  const showFocusClickHandler = (checked: boolean) => {
+  const focusSettingClickHandler = (checked: boolean) => {
     // Have absolutely no idea why I have to inverse the checked
-    chrome.storage.sync.set({ showFocus: !checked });
+    chrome.storage.sync.set({ focusSetting: !checked });
   };
 
   useEffect(() => {
-    chrome.storage.sync.get(["showFocus"], (storage) => {
-      if (storage.showFocus === undefined) {
-        setShowFocusEnabled(true);
+    chrome.storage.sync.get(["focusSetting"], (storage) => {
+      if (storage.focusSetting === undefined) {
+        setfocusSettingEnabled(true);
       } else {
-        setShowFocusEnabled(storage.showFocus);
+        setfocusSettingEnabled(storage.focusSetting);
       }
     });
   }, []);
@@ -27,8 +27,8 @@ const FocusSetting = (props: Props) => {
     <div>
       <section className="text-center w-full">
         <Checkbox
-          enabled={showFocusEnabled}
-          onClick={(checked) => showFocusClickHandler(checked)}
+          enabled={focusSettingEnabled}
+          onClick={(checked) => focusSettingClickHandler(checked)}
         />
       </section>
       <section className="w-full flex justify-between">

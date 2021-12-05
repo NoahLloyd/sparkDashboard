@@ -8,7 +8,7 @@ interface Props {
   onCategoryClick: (arg0: string) => void;
 }
 
-export default function SettingsNagiation(props: Props) {
+export default function SettingsNavigation(props: Props) {
   const categories = [
     { name: "Background", key: "background" },
     { name: "Focus mode", key: "focus" },
