@@ -5,11 +5,15 @@ chrome.runtime.onInstalled.addListener((details) => {
       chrome.storage.sync.set({ blockedSites: [] });
     }
   });
-  // Initial setup
+  // Initial setup || On install
   if (details.reason === "install" || details.reason === "update") {
     //! Remove update in production
     chrome.storage.sync.set({ setup: true });
     chrome.tabs.create({ url: "index.html" });
+  }
+  // On uninstall
+  if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    chrome.runtime.setUninstallURL("https://forms.gle/MTyinXn5CRH4Sdt88");
   }
 });
 
