@@ -6,11 +6,7 @@ const AppsSetting = (props: Props) => {
   const [appsEnabled, setAppsEnabled] = useState(true);
   useEffect(() => {
     chrome.storage.sync.get(["appsSetting"], (storage) => {
-      if (storage.appsSetting === undefined) {
-        setAppsEnabled(true);
-      } else {
         setAppsEnabled(storage.appsSetting);
-      }
     });
   }, []);
 
@@ -19,8 +15,8 @@ const AppsSetting = (props: Props) => {
       <Checkbox
         enabled={appsEnabled}
         onClick={(checked: boolean) => {
-          chrome.storage.sync.set({ appsSetting: !checked });
-          setAppsEnabled(!checked);
+          chrome.storage.sync.set({ appsSetting: checked });
+          setAppsEnabled(checked);
         }}
       />
     </div>

@@ -4,10 +4,10 @@ This is a chrome extension which will overwrite the default page when opening a 
 
 ## How to use:
 
-1. $` git clone https://github.com/NoahLloyd/sparkDashboard.git`
-2. $` cd sparkDashboard`
-3. $` npm install`
-4. $` npm run-scripts build`
+1. $ `git clone https://github.com/NoahLloyd/sparkDashboard.git`
+2. $ `cd sparkDashboard`
+3. $ `npm install`
+4. $ `npm run-scripts build`
 5. Navigate in your browser to chrome://extensions
 6. Enable developer mode in the top right
 7. Press "Load Unpacked" in the top left

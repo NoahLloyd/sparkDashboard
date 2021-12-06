@@ -7,11 +7,7 @@ const AlarmSetting = (props: Props) => {
   const [alarmEnabled, setAlarmEnabled] = useState(true);
   useEffect(() => {
     chrome.storage.sync.get(["alarmSetting"], (storage) => {
-      if (storage.alarmSetting === undefined) {
-        setAlarmEnabled(true);
-      } else {
         setAlarmEnabled(storage.alarmSetting);
-      }
     });
   }, []);
 
@@ -20,8 +16,8 @@ const AlarmSetting = (props: Props) => {
       <Checkbox
         enabled={alarmEnabled}
         onClick={(checked: boolean) => {
-          chrome.storage.sync.set({ alarmSetting: !checked });
-          setAlarmEnabled(!checked);
+          chrome.storage.sync.set({ alarmSetting: checked });
+          setAlarmEnabled(checked);
         }}
       />
     </div>

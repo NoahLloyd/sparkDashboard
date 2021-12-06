@@ -6,8 +6,7 @@ chrome.runtime.onInstalled.addListener((details) => {
     }
   });
   // Initial setup || On install
-  if (details.reason === "install" || details.reason === "update") {
-    //! Remove update in production
+  if (details.reason === "install") {
     chrome.storage.sync.set({ setup: true });
     chrome.tabs.create({ url: "index.html" });
   }

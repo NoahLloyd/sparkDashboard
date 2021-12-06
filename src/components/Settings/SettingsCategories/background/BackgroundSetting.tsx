@@ -24,7 +24,7 @@ const BackgroundSetting = () => {
       <main className="flex justify-between">
         <PredefinedImages
           enabled={checkboxes}
-          onClick={(checked: boolean) => checkboxClickHandler(!checked)}
+          onClick={(checked: boolean) => checkboxClickHandler(checked)}
         />
         <ChosenImages
           enabled={!checkboxes}
