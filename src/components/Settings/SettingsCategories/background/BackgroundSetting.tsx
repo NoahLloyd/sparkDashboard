@@ -5,7 +5,6 @@ import PredefinedImages from "./PredefinedImages";
 const BackgroundSetting = () => {
 
   //* "I have no idea how this works, but it does."
-
   const [checkboxes, setCheckboxes] = useState(false);
 
   const checkboxClickHandler = (checked: boolean) => {
@@ -28,7 +27,7 @@ const BackgroundSetting = () => {
         />
         <ChosenImages
           enabled={!checkboxes}
-          onClick={(checked: boolean) => checkboxClickHandler(!checked)}
+          onClick={(checked: boolean) => checkboxClickHandler(checked)}
         />
       </main>
     </>

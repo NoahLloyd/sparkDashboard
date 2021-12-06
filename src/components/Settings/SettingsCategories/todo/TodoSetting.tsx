@@ -20,8 +20,7 @@ const TodoSetting = (props: Props) => {
       <Checkbox
         enabled={todoEnabled}
         onClick={(checked: boolean) => {
-          chrome.storage.sync.set({ todoSetting: !checked });
-          setTodoEnabled(!checked);
+          chrome.storage.sync.set({ todoSetting: checked });
         }}
       />
     </div>

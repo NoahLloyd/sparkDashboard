@@ -5,11 +5,15 @@ interface Props {}
 
 const ChooseLinks = (props: Props) => {
   const [enabled, setEnabled] = useState(true);
+  const linkTitleInput = useRef<HTMLInputElement>(null);
+  const linkUrlInput = useRef<HTMLInputElement>(null);
+  const [chosenLinks, setChosenLinks] =
+    useState<{ title: string; url: string; favicon: string }[]>();
 
   useEffect(() => {
     chrome.storage.sync.get(["chosenLinksEnabled"], (storage) => {
       if (storage.chosenLinksEnabled === undefined) {
-        setEnabled(true);
+        setEnabled(false);
       } else {
         setEnabled(storage.chosenLinksEnabled);
       }
@@ -19,11 +23,6 @@ const ChooseLinks = (props: Props) => {
   const checkboxClickHandler = (enabled: boolean) => {
     chrome.storage.sync.set({ chosenLinksEnabled: enabled });
   };
-
-  const linkTitleInput = useRef<HTMLInputElement>(null);
-  const linkUrlInput = useRef<HTMLInputElement>(null);
-  const [chosenLinks, setChosenLinks] =
-    useState<{ title: string; url: string; favicon: string }[]>();
 
   useEffect(() => {
     chrome.storage.sync.get(["chosenLinks"], (storage) => {
@@ -67,22 +66,19 @@ const ChooseLinks = (props: Props) => {
   }) => {
     const titles = chosenLinks?.map((link) => link.title);
     const index = titles?.indexOf(link.title);
-    let tmpchosenLinks = chosenLinks;
-    if (typeof index === "number") tmpchosenLinks?.splice(index, 1);
-    const linksWithoutClickedLink = tmpchosenLinks;
-    setChosenLinks(linksWithoutClickedLink);
-    chrome.storage.sync.set({ chosenLinks: linksWithoutClickedLink });
+    let tmpChosenLinks = chosenLinks;
+    if (typeof index === "number") tmpChosenLinks?.splice(index, 1);
+    if (tmpChosenLinks) setChosenLinks([...tmpChosenLinks]);
+    chrome.storage.sync.set({ chosenLinks: tmpChosenLinks });
   };
 
   return (
     <div className="w-1/2 m-4">
       <div className="flex justify-between border-b-4 border-solid border-secondary mb-4 pb-4">
-        <h2 className="text-2xl text-left">
-          Choose your own sites
-        </h2>
+        <h2 className="text-2xl text-left">Choose your own sites</h2>
         <Checkbox
           enabled={enabled}
-          onClick={(enabled) => checkboxClickHandler(!enabled)}
+          onClick={(enabled) => checkboxClickHandler(enabled)}
         />
       </div>
       <div className="h-50px flex justify-between">

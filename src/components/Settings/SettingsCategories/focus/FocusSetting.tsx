@@ -12,15 +12,14 @@ const FocusSetting = (props: Props) => {
     chrome.storage.sync.set({ focusSetting: checked });
   };
 
+  console.log('here');
   useEffect(() => {
+    console.log('ere');
     chrome.storage.sync.get(["focusSetting"], (storage) => {
-      if (storage.focusSetting === undefined) {
-        setfocusSettingEnabled(true);
-      } else {
-        setfocusSettingEnabled(storage.focusSetting);
-      }
+      console.log(storage)
+      setfocusSettingEnabled(storage.focusSetting);
     });
-  }, []);
+  }, [setfocusSettingEnabled]);
 
   return (
     <div>

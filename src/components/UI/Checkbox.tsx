@@ -7,16 +7,19 @@ interface Props {
 }
 
 const Checkbox = (props: Props) => {
-  const [checked, setChecked] = useState(props.enabled)
-  const checkbox = useRef<HTMLInputElement>(null)
+  const checkbox = useRef<HTMLInputElement>(null);
 
   const id = Math.random().toString() + Math.random().toString();
 
   const toggleEnabled = () => {
-    let checkedValue = checkbox.current!.checked
-    props.onClick(checkedValue)
-    setChecked(checkedValue)
-  }
+    let checkedValue = checkbox.current!.checked;
+    props.onClick(checkedValue);
+  };
+
+  // Tried for an hour and this is the only way I can make it work
+  setTimeout(() => {
+    checkbox.current!.checked = props.enabled;
+  }, 0);
 
   return (
     <label
@@ -24,13 +27,7 @@ const Checkbox = (props: Props) => {
       htmlFor={id}
       onClick={toggleEnabled}
     >
-      <input
-        type="checkbox"
-        className="toggle__input"
-        id={id}
-        checked={checked}
-        ref={checkbox}
-      />
+      <input type="checkbox" className="toggle__input" id={id} ref={checkbox} />
       <span className="toggle-track">
         <span className="toggle-indicator">
           <span className="checkMark">

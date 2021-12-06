@@ -4,12 +4,12 @@ import Checkbox from "../../../UI/Checkbox";
 interface Props {}
 
 const AlarmSetting = (props: Props) => {
-  const [alarmEnabled, setAlarmEnabled] = useState(true);
+  const [alarmEnabled, setAlarmEnabled] = useState(false);
   useEffect(() => {
     chrome.storage.sync.get(["alarmSetting"], (storage) => {
         setAlarmEnabled(storage.alarmSetting);
     });
-  }, []);
+  }, [setAlarmEnabled]);
 
   return (
     <div className="text-center">
@@ -17,7 +17,6 @@ const AlarmSetting = (props: Props) => {
         enabled={alarmEnabled}
         onClick={(checked: boolean) => {
           chrome.storage.sync.set({ alarmSetting: checked });
-          setAlarmEnabled(checked);
         }}
       />
     </div>

@@ -28,7 +28,7 @@ const TopSites = (props: Props) => {
         </h2>
         <Checkbox
           enabled={enabled}
-          onClick={(enabled) => checkboxClickHandler(!enabled)}
+          onClick={(enabled) => checkboxClickHandler(enabled)}
         />
         
       </div>

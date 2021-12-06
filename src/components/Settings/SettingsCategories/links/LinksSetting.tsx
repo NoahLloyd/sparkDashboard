@@ -18,8 +18,7 @@ const LinksSetting = (props: Props) => {
       <Checkbox
         enabled={linksEnabled}
         onClick={(checked: boolean) => {
-          chrome.storage.sync.set({ linksSetting: !checked });
-          setLinksEnabled(!checked);
+          chrome.storage.sync.set({ linksSetting: checked });
         }}
       />
       <main className="flex justify-between">

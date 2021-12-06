@@ -18,8 +18,7 @@ const NotesSetting = (props: Props) => {
         <Checkbox
           enabled={notesEnabled}
           onClick={(checked: boolean) => {
-            chrome.storage.sync.set({ notesSetting: !checked });
-            setNotesEnabled(!checked);
+            chrome.storage.sync.set({ notesSetting: checked });
           }}
         />
       </div>

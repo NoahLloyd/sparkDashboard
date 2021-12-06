@@ -26,7 +26,7 @@ export default function ChosenImages(props: Props) {
     let tmpChosenUrls = chosenUrls;
     tmpChosenUrls.splice(urlIndex, 1);
     const urlsWithoutClickedUrl = tmpChosenUrls;
-    setChosenUrls(urlsWithoutClickedUrl);
+    if (urlsWithoutClickedUrl) setChosenUrls([...urlsWithoutClickedUrl]);
     chrome.storage.sync.set({ backgroundImages: urlsWithoutClickedUrl });
   };
 
@@ -35,6 +35,14 @@ export default function ChosenImages(props: Props) {
       if (storage.backgroundImages) setChosenUrls(storage.backgroundImages);
     });
   }, []);
+
+  // If a url is too long to be displayed, this shorts it and adds 3 dots
+  const shortenUrl = (url: string) => {
+    if (url.length >  40) {
+      return url.slice(0,37) + "..."
+    }
+    return url
+  }
 
   return (
     <section className="w-1/2 m-4">
@@ -61,15 +69,15 @@ export default function ChosenImages(props: Props) {
           Add Image
         </button>
       </div>
-      <table className="w-11/12">
+      <table className="w-full">
         <tbody>
           {chosenUrls.map((url: string) => (
             <tr className="p-4 mb-3 w-full">
               <td
-                  className="border-solid border-2 border-primary shadow-lg hover:line-through p-2 w-full text-lg"
-                  onClick={() => removeUrlHandler(url)}
+                className="overflow-hidden border-solid border-2 border-primary shadow-lg hover:line-through p-2 w-full text-lg"
+                onClick={() => removeUrlHandler(url)}
               >
-                {url}
+                {shortenUrl(url)}
               </td>
             </tr>
           ))}
