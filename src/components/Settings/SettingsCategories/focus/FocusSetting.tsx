@@ -9,8 +9,7 @@ const FocusSetting = (props: Props) => {
   const [focusSettingEnabled, setfocusSettingEnabled] = useState(true);
 
   const focusSettingClickHandler = (checked: boolean) => {
-    // Have absolutely no idea why I have to inverse the checked
-    chrome.storage.sync.set({ focusSetting: !checked });
+    chrome.storage.sync.set({ focusSetting: checked });
   };
 
   useEffect(() => {
