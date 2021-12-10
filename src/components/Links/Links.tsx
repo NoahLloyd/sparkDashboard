@@ -49,6 +49,7 @@ const Links = (props: Props) => {
           sites.forEach((site) => {
             const hostname = new URL(site.url).hostname;
             let title = hostname.split(".")[0];
+            if (title === "www") title = hostname.split('.')[1]
             title = title[0].toUpperCase() + title.slice(1);
             if (title.length > 8) {
               title = title.slice(0,8)
