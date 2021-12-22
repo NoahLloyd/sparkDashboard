@@ -11,6 +11,7 @@ interface Props {
 export default function SettingsNavigation(props: Props) {
   const categories = [
     { name: "Background", key: "background" },
+    { name: "Colors", key: "colors"},
     { name: "Focus mode", key: "focus" },
     { name: "Alarm", key: "alarm" },
     { name: "Quick links", key: "links" },

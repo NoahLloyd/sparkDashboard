@@ -4,9 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00002B",
-        secondary: "#F59E0B",
-        light: "#AAAADD"
+        primary: "var(--primary)",
+        primaryTransparent: "var(--primary-transparent)",
+        secondary: "var(--secondary)",
+        secondaryDark: "var(--secondary-dark)",
+        secondaryTransparent: "var(--secondary-transparent)",
+        secondaryTransparent2: "var(--secondary-transparent2)",
+        light: "var(--light)"
       }
     },
   },

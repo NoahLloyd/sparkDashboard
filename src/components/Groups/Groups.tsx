@@ -45,7 +45,7 @@ const Groups = (props: Props) => {
         {groups?.map((group) => (
           <div
             onClick={() => openGroup(group.title)}
-            className="text-white text-center text-xl bg-primary font-light bg-opacity-40 px-6 py-2 cursor-pointer m-1"
+            className="text-white text-center text-xl rounded bg-primaryTransparent font-light px-6 py-2 cursor-pointer m-1"
           >
             <h3>{group.title}</h3>
           </div>

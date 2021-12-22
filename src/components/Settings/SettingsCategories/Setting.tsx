@@ -12,6 +12,7 @@ import EmailsSetting from "./email/EmailSetting";
 import FocusSetting from "./focus/FocusSetting";
 import GroupsSetting from "./groups/GroupsSetting";
 import AppsSetting from "./Apps/AppsSetting";
+import ColorsSetting from "./colors/ColorsSetting";
 
 interface Props {
   category: string;
@@ -54,6 +55,9 @@ export default function Setting(props: Props) {
       break;
     case "apps":
       settingContent = <AppsSetting />;
+      break;
+    case "colors":
+      settingContent = <ColorsSetting />;
       break;
 
     default:

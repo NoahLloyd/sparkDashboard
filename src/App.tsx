@@ -15,16 +15,21 @@ import Settings from "./components/Settings/Settings";
 
 function App() {
   const [setup, setSetup] = useState(false);
+  const [colorTheme, setColorTheme] = useState("1");
   useEffect(() => {
+    // If the extension was just installed or setup has not been completed
     chrome.storage.sync.get(["setup"], (storage) => {
       if (storage.setup) {
         setSetup(true);
       }
     });
-  }, [setSetup]);
+    chrome.storage.sync.get(["colorTheme"], (storage) => {
+      setColorTheme(storage.colorTheme);
+    });
+  }, [setSetup, setColorTheme]);
   if (!setup) {
     return (
-      <div className="app">
+      <div className={"theme-" + colorTheme}>
         <Background />
         <Apps />
         <Groups />

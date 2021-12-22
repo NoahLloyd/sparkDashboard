@@ -10,10 +10,54 @@
   --gray: #555;
   --light-gray: #aaa;
   --white: #fff;
-  --primary: #44bb88;
-  --primary-transparent: #44bb8888;
+  --light: #aaaadd;
 }
+.theme-1 {
+  /* Colors */
+  --primary: #00002b;
+  --primary-transparent: #00002b88;
+  --secondary: #f59e0b;
+  --secondary-dark: #211901; 
+  --secondary-transparent: #f59e0b48;
+  --secondary-transparent2: #f59e0b25;
 
+}
+.theme-2 {
+  /* Colors */
+  --primary: hsl(268, 100%, 15%);
+  --primary-transparent: hsla(268, 100%, 15%, 0.534);
+  --secondary: #44bb88;
+  --secondary-dark: #002934;
+  --secondary-transparent: #44bb8848;
+  --secondary-transparent2: #44bb8825;
+}
+.theme-3 {
+  /* Colors */
+  --primary: #3F0000;
+  --primary-transparent: #3F000088;
+  --secondary: #D72A2A ;
+  --secondary-dark: #330a0a ;
+  --secondary-transparent: #D72A2A48;
+  --secondary-transparent2: #D72A2A25;
+}
+.theme-4 {
+  /* Colors */
+  --primary: #3f1700;
+  --primary-transparent: #3f170088;
+  --secondary: #BC5E00;
+  --secondary-dark: #381c00;
+  --secondary-transparent: #BC5E0048;
+  --secondary-transparent2: #BC5E0025;
+}
+.theme-5 {
+  /* Colors */
+  --primary: #032D19;
+  --primary-transparent: #032D1988;
+  --secondary: #3447F1;
+  --secondary-dark: #090d2e;
+  --secondary-transparent: #3447F148;
+  --secondary-transparent2: #3447F125;
+}
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;

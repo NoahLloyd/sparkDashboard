@@ -58,7 +58,7 @@
     transition: opacity 1000 ease-in-out;
 }
 .toggle__input:checked + .toggle-track .toggle-indicator {
-    background: #F59E0B;
+    background: var(--secondary);
     transform: translateX(30px);
 }
 .toggle__input:checked + .toggle-track .toggle-indicator .checkMark {

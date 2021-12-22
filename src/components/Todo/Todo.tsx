@@ -37,7 +37,7 @@ const Todo = (props: Props) => {
       <div
         onMouseEnter={() => setTodoOpen(true)}
         onMouseLeave={notHoveringMoreHandler}
-        className="absolute bottom-0 right-0 mr-4 rounded bg-primary bg-opacity-60 text-light mx-4 w-1/6"
+        className="absolute bottom-0 right-0 mr-4 rounded bg-primaryTransparent text-light mx-4 w-1/6"
       >
         <h2 className="text-2xl py-1 px-2 text-center">Todo</h2>
         {todoOpen && <TodoList />}

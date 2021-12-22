@@ -82,7 +82,7 @@ export default function Background() {
       />
       <div
         className="absolute top-0 left-0 h-screen w-screen opacity-80"
-        style={{ backgroundColor: "#211901" }}
+        style={{ backgroundColor: "var(--secondary-dark)" }}
       ></div>
     </>
   );

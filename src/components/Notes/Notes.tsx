@@ -37,7 +37,7 @@ const Notes = (props: Props) => {
         onMouseEnter={() => setNotesOpen(true)}
         onMouseLeave={() => setNotesOpen(false)}
         style={{marginRight: marginRight}}
-        className="absolute bottom-0 right-0 rounded bg-primary bg-opacity-60 text-light w-1/6"
+        className="absolute bottom-0 right-0 rounded bg-primaryTransparent text-light w-1/6"
       >
         <h2 className="text-2xl py-1 px-2 text-center mx-4">Notes</h2>
         {notesOpen && <NotesOpen />}
