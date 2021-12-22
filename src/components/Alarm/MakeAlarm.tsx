@@ -1,4 +1,4 @@
-import React, { useRef,useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Backdrop from "../UI/Backdrop";
 import "./MakeAlarmAnimation.css";
 
@@ -23,20 +23,38 @@ const MakeAlarm = (props: Props) => {
     chrome.alarms.create("Alarm!", {
       delayInMinutes: hours * 60 + minutes,
     });
-    props.addAlarmHandler()
+    chrome.storage.sync.get(["alarms"], (storage) => {
+
+      // Sets a new alarm in storage because only one is allowed
+      // This alarm is created upon the previous alarm being triggered
+      const now = new Date();
+      const nextAlarm = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDay(),
+        now.getHours(),
+        now.getMinutes() + hours * 60 + minutes,
+        now.getSeconds(),
+        now.getMilliseconds()
+      );
+      chrome.storage.sync.set({ alarms: [...storage.alarms, nextAlarm] });
+    });
+    props.addAlarmHandler();
   };
 
   useEffect(() => {
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') addAlarmHandler()
-    })
-  }, [])
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") addAlarmHandler();
+    });
+  }, []);
 
   return (
     <h2 className="border-b-4 border-solid border-secondary pb-2 mb-4 flex ">
       <span className="text-lg align-middle mt-auto mr-4">Alarm in</span>
       <div className="flex flex-col">
-        <label htmlFor="alarmDelayHours" className="text-center">Hours</label>
+        <label htmlFor="alarmDelayHours" className="text-center">
+          Hours
+        </label>
         <input
           type="number"
           id="alarmDelayHours"
@@ -45,7 +63,9 @@ const MakeAlarm = (props: Props) => {
         ></input>
       </div>
       <div className="flex flex-col">
-        <label htmlFor="alarmDelayMinutes" className="text-center">Minutes</label>
+        <label htmlFor="alarmDelayMinutes" className="text-center">
+          Minutes
+        </label>
         <input
           type="number"
           id="alarmDelayMinutes"

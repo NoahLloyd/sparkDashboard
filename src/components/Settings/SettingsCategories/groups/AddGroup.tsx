@@ -3,7 +3,7 @@ import PlusIcon from "../../../../assets/icons/PlusIcon";
 import Checkbox from "../../../UI/Checkbox";
 
 interface Props {
-  updateGroup: (group: {title: string; sites: string[]} | undefined) => void;
+  updateGroup: (group: {title: string; sites: string[]}) => void;
 }
 
 const AddGroup = (props: Props) => {

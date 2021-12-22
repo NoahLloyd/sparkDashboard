@@ -4,7 +4,7 @@ interface Props {}
 
 const Groups = (props: Props) => {
   const [groups, setGroups] = useState<{ title: string; sites: string[] }[]>();
-  const [closeTabs, setCloseTabs] = useState(true)
+  const [closeTabs, setCloseTabs] = useState(true);
   const [showGroups, setShowGroups] = useState(false);
   useEffect(() => {
     // The groups themselves
@@ -16,11 +16,11 @@ const Groups = (props: Props) => {
       setShowGroups(storage.groupsSetting);
     });
     // If tabs should be closed on click
-    chrome.storage.sync.get(['closeTabs'], (storage) => {
-        if (storage.closeTabs !== undefined) {
-          setCloseTabs(storage.closeTabs)
-        }
-    })
+    chrome.storage.sync.get(["closeTabs"], (storage) => {
+      if (storage.closeTabs !== undefined) {
+        setCloseTabs(storage.closeTabs);
+      }
+    });
   }, [setGroups, setShowGroups, setCloseTabs]);
 
   const openGroup = (title: string) => {
