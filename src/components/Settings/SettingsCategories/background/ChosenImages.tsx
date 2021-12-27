@@ -69,10 +69,10 @@ export default function ChosenImages(props: Props) {
           Add Image
         </button>
       </div>
-      <table className="w-full">
-        <tbody>
+      <table className="w-full m-0">
+        <tbody className="m-0">
           {chosenUrls.map((url: string) => (
-            <tr className="p-4 mb-3 w-full">
+            <tr className="p-4 mt-3 w-full">
               <td
                 className="overflow-hidden border-solid border-2 border-primary shadow-lg hover:line-through p-2 w-full text-lg"
                 onClick={() => removeUrlHandler(url)}
@@ -83,6 +83,7 @@ export default function ChosenImages(props: Props) {
           ))}
         </tbody>
       </table>
+      <a className="text-blue-900 text-lg font-medium mt-1 underline" href="https://sparkdashboard.com/help/upload-images" target="_blank" >How to use</a>
     </section>
   );
 }

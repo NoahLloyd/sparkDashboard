@@ -20,6 +20,7 @@ const NotesOpen = (props: Props) => {
   return (
     <div>
       <textarea
+      id="notes-section--forHover"
         onMouseLeave={textChangeHandler}
         ref={textInput}
         className="resize-none bg-transparent text-white m-auto p-3 w-full focus:outline-none h-96 text-lg"

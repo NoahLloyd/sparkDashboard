@@ -11,6 +11,12 @@
   --light-gray: #aaa;
   --white: #fff;
   --light: #aaaadd;
+  --primary: #00002b;
+  --primary-transparent: #00002b88;
+  --secondary: #f59e0b;
+  --secondary-dark: #211901; 
+  --secondary-transparent: #f59e0b48;
+  --secondary-transparent2: #f59e0b25;
 }
 .theme-1 {
   /* Colors */

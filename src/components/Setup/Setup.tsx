@@ -10,6 +10,9 @@ import Setup4 from "./Setup4";
 interface Props {}
 
 const Setup = (props: Props) => {
+  // Color theme set to 1
+  chrome.storage.sync.set({ colorTheme: "1" });
+
   const [currentPage, setCurrentPage] = useState(1);
   let setupSection = <Setup1 />;
   switch (currentPage) {

@@ -1,7 +1,7 @@
 {
   "name": "Spark Dashboard",
   "description": "Powerful override for New Tab redefining it with new features and functionality",
-  "version": "1.2.2",
+  "version": "2.5.1",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },

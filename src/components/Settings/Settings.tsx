@@ -7,6 +7,17 @@ export default function Settings() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [categoryOpen, setCategoryOpen] = useState("");
 
+  // Close the setting and setings sidebar with "Escape"
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      if (categoryOpen) {
+        setCategoryOpen("")
+      } else {
+        setSettingsOpen(false)
+      }
+    }
+  })
+
   return (
     <>
       <aside className="absolute bottom-0 left-0 m-4">

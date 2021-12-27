@@ -24,7 +24,11 @@ function App() {
       }
     });
     chrome.storage.sync.get(["colorTheme"], (storage) => {
-      setColorTheme(storage.colorTheme);
+      if (storage.colorTheme === undefined) {
+        setColorTheme("1");
+      } else {
+        setColorTheme(storage.colorTheme);
+      }
     });
   }, [setSetup, setColorTheme]);
   if (!setup) {
