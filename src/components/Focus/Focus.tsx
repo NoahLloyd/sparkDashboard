@@ -60,7 +60,7 @@ const Focus = (props: Props) => {
     return (
       <h1
         className={
-          "select-none text-4xl block text-center cursor-pointer" + styles
+          "select-none text-4xl block text-center cursor-pointer transition-colors" + styles
         }
         onClick={toggleFocusMode}
       >

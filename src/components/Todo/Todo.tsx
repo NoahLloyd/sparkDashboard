@@ -27,7 +27,7 @@ const Todo = (props: Props) => {
     //       setTodoOpen(false);
     //     }, 100);
     //   } else {
-        setTodoOpen(false);
+    setTodoOpen(false);
     //   }
     // });
   };
@@ -35,7 +35,12 @@ const Todo = (props: Props) => {
   if (showTodo) {
     return (
       <div
-        onMouseEnter={() => setTodoOpen(true)}
+        onMouseEnter={() => {
+          setTodoOpen(true);
+          setTimeout(() => {
+            document.getElementById("todo-section--forHover")?.focus();
+          }, 10);
+        }}
         onMouseLeave={notHoveringMoreHandler}
         className="absolute bottom-0 right-0 mr-4 rounded bg-primaryTransparent text-light mx-4 w-1/6"
       >

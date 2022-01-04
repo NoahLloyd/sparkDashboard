@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import AddTodo from "./AddTodo";
 import TodoItem from "./TodoItem";
 import "./TodoAnimation.css";
@@ -6,6 +6,7 @@ import "./TodoAnimation.css";
 interface Props {}
 
 const TodoList = (props: Props) => {
+  const todoListRef = useRef<HTMLDivElement>(null)
   const [todos, setTodos] =
     useState<{ id: string; title: string; completed: boolean }[]>();
 
@@ -18,6 +19,13 @@ const TodoList = (props: Props) => {
       }
       setTodos(storage.todoList);
     });
+
+    // Slowly increase size animation
+    for (let i = 0; i < 48; i++) {
+      setTimeout(() => {
+        todoListRef.current!.style.height = `${i / 2}rem`;
+      }, i * 5);
+    }
   }, []);
 
   // Add a new todo item
@@ -51,13 +59,12 @@ const TodoList = (props: Props) => {
     const todosWithCompletedTodo = todos?.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
-    setTodos(todosWithCompletedTodo)
-    chrome.storage.sync.set({todoList: todosWithCompletedTodo});
+    setTodos(todosWithCompletedTodo);
+    chrome.storage.sync.set({ todoList: todosWithCompletedTodo });
   };
 
   return (
-      
-      <div className="todo-animation" style={{minHeight: "10rem"}}>
+    <div className="todo-animation" ref={todoListRef} style={{ minHeight: "10rem" }}>
       <AddTodo addTodo={addTodo} />
 
       <div className="mx-4 my-6 overflow-auto">

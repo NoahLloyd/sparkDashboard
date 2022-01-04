@@ -31,6 +31,7 @@ const AddTodo = (props: Props) => {
         className="flex items-center transition duration-500 ease-in-out py-2 border-b-2 border-gray-300 focus-within:border-b-2 focus-within:border-secondary"
       >
         <input
+        id="todo-section--forHover"
           name="task-title"
           type="text"
           placeholder="Add task..."
