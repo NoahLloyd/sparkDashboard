@@ -1,17 +1,17 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import "./App.css";
 
-import Focus from "./components/Focus/Focus";
-import Time from "./components/Time";
+import Focus from "./components/features/Focus/Focus";
+import Time from "./components/features/Time/Time";
 import Background from "./components/UI/Background";
-import Alarm from "./components/Alarm/Alarm";
-import Todo from "./components/Todo/Todo";
-import Notes from "./components/Notes/Notes";
-import Links from "./components/Links/Links";
-import Groups from "./components/Groups/Groups";
-import Apps from "./components/Apps/Apps";
-import Setup from "./components/Setup/Setup";
-import Settings from "./components/Settings/Settings";
+import Alarm from "./components/features/Alarm/Alarm";
+import Todo from "./components/features/Todo/Todo";
+import Notes from "./components/features/Notes/Notes";
+import Links from "./components/features/Links/Links";
+import Groups from "./components/features/Groups/Groups";
+import Apps from "./components/features/Apps/Apps";
+import Setup from "./components/features/Setup/Setup";
+import Settings from "./components/features/Settings/Settings";
 
 function App() {
   const [setup, setSetup] = useState(false);

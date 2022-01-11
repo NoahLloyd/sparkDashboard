@@ -2,7 +2,7 @@ import React from "react";
 import image0 from "../../../../assets/backgroundImages/0.jpg";
 import image1 from "../../../../assets/backgroundImages/1.jpg";
 import image2 from "../../../../assets/backgroundImages/2.jpg";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 
 interface Props {
   enabled: boolean;
