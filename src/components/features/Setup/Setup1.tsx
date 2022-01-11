@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo/logotext.png";
+import logo from "../../../assets/logo/logotext.png";
 
 interface Props {}
 

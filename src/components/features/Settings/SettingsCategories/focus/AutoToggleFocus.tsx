@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useRef } from "react";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 // import AutoToggleFocusDay from "./AutoToggleFocusDay";
 
 interface Props {}

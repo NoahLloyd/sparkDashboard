@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SettingsIcon from "../../assets/icons/SettingsIcon";
+import SettingsIcon from "../../../assets/icons/SettingsIcon";
 import SettingsNavigation from "./SettingsNavigation/SettingsNavigation";
 import Setting from "./SettingsCategories/Setting";
 

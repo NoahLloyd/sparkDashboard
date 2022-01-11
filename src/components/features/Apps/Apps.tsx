@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import AppsIcon from "../../assets/icons/AppsIcon";
+import AppsIcon from "../../../assets/icons/AppsIcon";
 
 interface Props {}
 

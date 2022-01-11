@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 import ChooseLinks from "./ChooseLinks";
 import TopSites from "./TopSites";
 

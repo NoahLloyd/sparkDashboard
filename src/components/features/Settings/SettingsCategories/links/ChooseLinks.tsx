@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 
 interface Props {}
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Backdrop from "../../UI/Backdrop";
+import Backdrop from "../../../UI/Backdrop";
 import "./SettingsNavigation.css";
 import SettingsNavigationCategory from "./SettingsNavigationCategory";
 

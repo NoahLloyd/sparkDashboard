@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import PlusIcon from "../../../../assets/icons/PlusIcon";
-import Checkbox from "../../../UI/Checkbox";
+import PlusIcon from "../../../../../assets/icons/PlusIcon";
+import Checkbox from "../../../../UI/Checkbox";
 
 interface Props {
   updateGroup: (group: {title: string; sites: string[]}) => void;

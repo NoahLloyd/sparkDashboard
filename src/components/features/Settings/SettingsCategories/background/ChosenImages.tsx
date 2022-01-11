@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 
 interface Props {
   enabled: boolean;

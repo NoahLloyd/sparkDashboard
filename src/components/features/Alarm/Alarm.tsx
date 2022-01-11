@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaStepBackward } from "react-icons/fa";
-import AlarmIcon from "../../assets/icons/AlarmIcon";
+import AlarmIcon from "../../../assets/icons/AlarmIcon"
 import AlarmOpen from "./AlarmOpen";
 
 interface Props {}

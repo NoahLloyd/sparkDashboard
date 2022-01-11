@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 import AddGroup from "./AddGroup";
 import ShowGroups from "./ShowGroups";
 

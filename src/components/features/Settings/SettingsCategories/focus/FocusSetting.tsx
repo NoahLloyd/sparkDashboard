@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Checkbox from "../../../UI/Checkbox";
+import Checkbox from "../../../../UI/Checkbox";
 import AutoToggleFocus from "./AutoToggleFocus";
 import BlockSites from "./BlockSites";
 

@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import "./SettingAnimation.css";
-import Backdrop from "../../UI/Backdrop";
+import Backdrop from "../../../UI/Backdrop";
 
 import BackgroundSetting from "./background/BackgroundSetting";
 import AlarmSetting from "./alarm/AlarmSetting";

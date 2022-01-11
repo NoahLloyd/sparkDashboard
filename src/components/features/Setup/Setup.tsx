@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Background from "../UI/Background";
+import Background from "../../UI/Background";
 import SetupNavigation from "./SetupNavigation";
 import "./Setup.css";
 import Setup1 from "./Setup1";

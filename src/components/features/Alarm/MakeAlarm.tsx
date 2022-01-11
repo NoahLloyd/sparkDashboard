@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import Backdrop from "../UI/Backdrop";
+import Backdrop from "../../UI/Backdrop";
 import "./MakeAlarmAnimation.css";
 
 interface Props {
